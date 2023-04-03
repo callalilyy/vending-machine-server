@@ -44,29 +44,6 @@ public class Menu {
 		return userInput;
 	}
 
-	// Prompts the user to enter a money amount and returns it
-	public double getMoneyAmountFromUser(String message) {
-		double userInput = 0;
-		boolean valid = false;
-		while (!valid) {
-			out.print(message);
-			out.flush();
-			String input = in.nextLine();
-			try {
-				userInput = Double.parseDouble(input);
-				if (userInput >= 0) {
-					valid = true;
-				} else {
-					out.println(System.lineSeparator() + "*** Amount must be greater than or equal to 0.00 ***" + System.lineSeparator());
-					out.flush();
-				}
-			} catch (NumberFormatException e) {
-				out.println(System.lineSeparator() + "*** " + input + " is not a valid amount ***" + System.lineSeparator());
-				out.flush();
-			}
-		}
-		return userInput;
-	}
 
 	// Gets the user's choice from the input and returns it
 	private Object getChoiceFromUserInput(Object[] options) {
