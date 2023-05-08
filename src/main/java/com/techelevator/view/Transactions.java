@@ -49,7 +49,7 @@ public class Transactions {
 
     }
 
-    private void logTransaction(String logMessage) {
+    public void logTransaction(String logMessage) {
         try {
             // Create a FileWriter object to append to the Log.txt file
             FileWriter writer = new FileWriter("Log.txt", true);

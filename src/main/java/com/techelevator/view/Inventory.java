@@ -2,7 +2,7 @@ package com.techelevator.view;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -11,12 +11,8 @@ public class Inventory {
 
     public Inventory() {
         // Initialize the products Map and load inventory from file
-        products = new HashMap<>();
+        products = new LinkedHashMap<>();
         loadInventoryFromFile("vendingmachine.csv");
-    }
-
-    public void restock() {
-        // Restock the vending machine - method body not implemented yet
     }
 
     public Product selectProduct(String slotIdentifier) {
@@ -43,6 +39,7 @@ public class Inventory {
     }
 
     public void displayProducts() {
+
         // Iterate through each product in the products Map
         for (Map.Entry<String, Product> entry : products.entrySet()) {
             String slotNumber = entry.getKey();
